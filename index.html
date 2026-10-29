@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10100f">
+<meta name="description" content="BARBER CLUB — barbearia, estilo e tradição. Conheça nossos serviços e agende seu horário.">
+<title>BARBER CLUB | Barbearia</title>
+<style>
+:root {
+  --bg: #10100f;
+  --panel: #191917;
+  --gold: #d7b46a;
+  --white: #f5f1e8;
+  --muted: #aaa69c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1100px, 90%); margin: auto; }
+header {
+  border-bottom: 1px solid #ffffff14;
+  background: #10100ff2;
+  position: sticky; top: 0; z-index: 10;
+}
+nav {
+  min-height: 76px; display: flex; align-items: center;
+  justify-content: space-between; gap: 20px;
+}
+.logo { font-size: 19px; font-weight: 900; letter-spacing: 2px; }
+.logo span { color: var(--gold); }
+.navlinks { display: flex; gap: 26px; align-items: center; }
+.navlinks a { font-size: 13px; color: var(--muted); }
+.navlinks a:hover { color: var(--gold); }
+.button {
+  display: inline-block; padding: 13px 20px;
+  background: var(--gold); color: #17130b;
+  border: 0; font-weight: 800; font-size: 12px;
+  letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; transition: .2s;
+}
+.button:hover { background: #f0d18d; transform: translateY(-2px); }
+.hero {
+  min-height: 540px; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  background:
+    linear-gradient(90deg, #10100f 4%, #10100fef 42%, #10100f35 100%),
+    url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=85') center/cover;
+}
+.hero-content { max-width: 620px; padding: 90px 0; }
+.eyebrow {
+  color: var(--gold); text-transform: uppercase;
+  font-size: 11px; letter-spacing: 4px; font-weight: bold;
+}
+h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.04; margin: 22px 0; }
+h1 span { color: var(--gold); }
+.hero p { color: #c1bdb4; max-width: 470px; margin-bottom: 28px; }
+.hero-note { font-size: 11px; color: var(--muted); margin-top: 15px; }
+section { padding: 82px 0; }
+.section-head { text-align: center; margin-bottom: 38px; }
+h2 { font-size: clamp(28px, 4vw, 40px); margin: 10px 0; }
+.section-head p { color: var(--muted); font-size: 14px; }
+.services {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+}
+.service {
+  background: var(--panel); border: 1px solid #ffffff12;
+  padding: 27px; transition: .2s;
+}
+.service:hover { border-color: #d7b46a88; transform: translateY(-4px); }
+.service .number { color: var(--gold); font-size: 12px; letter-spacing: 2px; }
+.service h3 { margin: 17px 0 8px; font-size: 19px; }
+.service p { color: var(--muted); font-size: 13px; min-height: 42px; }
+.price { color: var(--gold); font-size: 24px; font-weight: bold; margin-top: 20px; }
+.price small { font-size: 11px; font-weight: normal; color: var(--muted); }
+.about {
+  background: #181816; border-top: 1px solid #ffffff0c;
+  border-bottom: 1px solid #ffffff0c;
+}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about h2 { margin-bottom: 18px; }
+.about p { color: var(--muted); margin-bottom: 16px; font-size: 14px; }
+.features { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.features span { border: 1px solid #ffffff20; padding: 9px 12px; font-size: 11px; }
+.quote {
+  border-left: 2px solid var(--gold); padding: 28px;
+  background: #10100f; color: #d9d4c9; font-size: 20px;
+}
+.quote small { display: block; color: var(--gold); margin-top: 18px; font-size: 11px; }
+.contact-box {
+  background: var(--panel); border: 1px solid #ffffff16;
+  padding: 35px; text-align: center; max-width: 700px; margin: auto;
+}
+.contact-box p { color: var(--muted); margin: 12px auto 24px; max-width: 480px; font-size: 14px; }
+.contact-box .button { margin: 5px; }
+footer { border-top: 1px solid #ffffff14; padding: 28px 0; }
+.footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+footer p { color: var(--muted); font-size: 11px; }
+@media(max-width: 720px) {
+  .navlinks { gap: 12px; }
+  .navlinks a { font-size: 11px; }
+  .navlinks .button { padding: 10px; font-size: 10px; }
+  .hero { min-height: 490px; background-position: 58% center; }
+  .hero-content { padding: 70px 0; }
+  .services { grid-template-columns: 1fr; }
+  .service p { min-height: 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 25px; }
+  section { padding: 62px 0; }
+}
+@media(max-width: 390px) {
+  .logo { font-size: 15px; }
+  .navlinks { gap: 9px; }
+  .navlinks a { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#inicio">BARBER<span>CLUB.</span></a>
+    <div class="navlinks">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a class="button" href="#contato">Agendar</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Estilo • Precisão • Atitude</div>
+        <h1>SEU ESTILO.<br>NOSSAS <span>REGRAS.</span></h1>
+        <p>Mais que um corte, uma experiência. Um espaço pensado para quem valoriza o próprio estilo e não abre mão dos detalhes.</p>
+        <a class="button" href="#contato">Conheça a barbearia ↗</a>
+        <div class="hero-note">SITE DEMONSTRATIVO — MARCA E INFORMAÇÕES FICTÍCIAS</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">O que fazemos</div>
+        <h2>Serviços em destaque</h2>
+        <p>Precisão nos detalhes. Respeito ao seu estilo.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="number">01 / CLÁSSICO</div>
+          <h3>Corte masculino</h3>
+          <p>Do clássico ao moderno, personalizado para você.</p>
+          <div class="price">R$ 40 <small>/ exemplo</small></div>
+        </article>
+        <article class="service">
+          <div class="number">02 / PRECISÃO</div>
+          <h3>Barba desenhada</h3>
+          <p>Acabamento cuidadoso para valorizar seu visual.</p>
+          <div class="price">R$ 25 <small>/ exemplo</small></div>
+        </article>
+        <article class="service">
+          <div class="number">03 / COMPLETO</div>
+          <h3>Corte + barba</h3>
+          <p>Uma experiência completa para renovar o estilo.</p>
+          <div class="price">R$ 55 <small>/ exemplo</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div>
+        <div class="eyebrow">Nossa essência</div>
+        <h2>O detalhe faz<br><span style="color:var(--gold)">a diferença.</span></h2>
+        <p>Uma boa barbearia combina técnica, ambiente e atenção a cada cliente. Aqui, cada detalhe do conceito foi pensado para transmitir confiança e personalidade.</p>
+        <p>Este texto é uma demonstração e poderá ser substituído pela história real do negócio.</p>
+        <div class="features">
+          <span>✦ Atendimento personalizado</span>
+          <span>✦ Ambiente confortável</span>
+          <span>✦ Atenção aos detalhes</span>
+        </div>
+      </div>
+      <div class="quote">
+        “Seu corte faz parte de quem você é. Escolha um estilo que represente você.”
+        <small>BARBER CLUB — TEXTO DEMONSTRATIVO</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <div class="contact-box">
+        <div class="eyebrow">Seu próximo visual começa aqui</div>
+        <h2>Vamos marcar seu horário?</h2>
+        <p>Entre em contato para consultar os horários disponíveis. No site de um cliente, este botão será ligado ao WhatsApp real do estabelecimento.</p>
+        <a class="button" href="https://wa.me/" id="whatsapp">Configurar contato ↗</a>
+        <p style="font-size:11px;margin-bottom:0">Demonstração: configure o número antes de usar comercialmente.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="logo" href="#inicio">BARBER<span>CLUB.</span></a>
+    <p>Projeto demonstrativo criado para portfólio.</p>
+    <p>© <span id="year"></span> Barber Club</p>
+  </div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('whatsapp').addEventListener('click', function(event) {
+  event.preventDefault();
+  alert('Este é um site de demonstração. Para usar com um cliente, configure o link com o número oficial do estabelecimento.');
+});
+</script>
+</body>
+</html>
